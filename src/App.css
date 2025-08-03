@@ -1,0 +1,8 @@
+@import "tailwindcss";
+/* Tailwind Customization */
+@layer utilities {
+  .glow-effect {
+    background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(0,0,255,0.5) 80%);
+    box-shadow: 0 0 30px 10px rgba(0, 0, 255, 0.5);
+  }
+}
