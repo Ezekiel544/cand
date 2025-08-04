@@ -243,7 +243,7 @@ const [tiktokFollowed, setTikTokFollowed] = useState(false);
       setTimeout(() => {
         setIsFollowingX(false);
         setXFollowed(true);
-        window.open('https://twitter.com/yourHandleHere', '_blank');
+        window.open('https://twitter.com/candoxa_', '_blank');
       }, 2000);
     }}
     disabled={xFollowed}
@@ -297,7 +297,7 @@ const [tiktokFollowed, setTikTokFollowed] = useState(false);
       setTimeout(() => {
         setIsFollowingTikTok(false);
         setTikTokFollowed(true);
-        window.open('https://www.tiktok.com/@yourHandleHere', '_blank');
+        window.open('https://www.tiktok.com/@candoxa_', '_blank');
       }, 2000);
     }}
     disabled={tiktokFollowed}

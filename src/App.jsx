@@ -74,7 +74,7 @@ useEffect(() => {
        {/* <div className="absolute inset-0 "></div> */}
       {/* bg-gradient-to-br from-blue-900/20 via-black to-purple-900/20 */}
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-20 flex justify-between items-center px-6 lg:px-12 py-6 bg-[#06081D]">
+      <nav className="fixed top-0 left-0 right-0 z-20 flex justify-between items-center px-6 lg:px-12 py-6 bg-[#06081D] " >
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center border border-5">
