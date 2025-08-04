@@ -50,23 +50,24 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
     setIsMenuOpen(!isMenuOpen);
   };
 
-   const [isLoading, setIsLoading] = useState(false); // State to handle Preloader visibility
+ 
+     const [showPreloader, setShowPreloader] = useState(false);
+     const [isLoading, setIsLoading] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+useEffect(() => {
+  if (showPreloader) {
+    const timer = setTimeout(() => {
+      navigate('/form'); // Navigate using the path, not the file path
+    }, 2000); // Delay for 2 seconds before navigating to the form page
+    return () => clearTimeout(timer); // Cleanup on component unmount
+  }
+}, [showPreloader, navigate]);
 
-   const location = useLocation(); // To detect location change and reset state when coming back
-
-  // Reset Preloader when the user navigates back to the landing page
-  useEffect(() => {
-    if (location.pathname === '/') {
-      setIsLoading(false); // Reset Preloader visibility
-    }
-  }, [location]);
-  const handleButtonClick = () => {
-    setIsLoading(true); // Show the Preloader
-    setTimeout(() => {
-      navigate('/form'); // Navigate to the form page after preloader delay
-    }, 3000); // Adjust the duration of the preloader here (in milliseconds)
-  };
+  // ❗ Make sure this return comes AFTER all hooks
+  if (showPreloader) {
+    return < Preloader/>;
+  }
   return (
     <div className="min-h-screen   bg-[#02050E] text-white overflow-hidden">
       {/* bg-[#030514] */}
@@ -231,7 +232,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
       ) : (
         <div className="relative z-10 flex justify-center">
           <button
-            onClick={handleButtonClick} // Trigger Preloader when button is clicked
+           onClick={() => setShowPreloader(true)} // Trigger Preloader when button is clicked
             className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-3 mt-5 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 mb-6"
           >
             Join waitlist
